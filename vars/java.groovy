@@ -7,7 +7,7 @@ tools {
 stages{
 stage ("checkout"){
 steps{
-git branch: 'config.Branch', credentialsId: 'config.cred', url: 'config.repourl' 
+git branch: 'config.branch', credentialsId: 'config.cred', url: 'config.repourl' 
     }    
 }   
 stage('Build'{
