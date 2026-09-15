@@ -1,7 +1,9 @@
 def call(map config){
 pipeline{
 agent any //tools,parameters
-
+tools {
+    maven "${config.maventool}"
+}
 stages{
 stage ("checkout"){
 steps{
