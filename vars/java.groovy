@@ -11,7 +11,9 @@ def call(Map config) {
 
             stage('Checkout') {
                 steps {
-                    git branch: config.branch, url: config.repourl
+                    git branch: config.branch,
+                        credentialsId: config.cred,
+                        url: config.repourl
                 }
             }
 
@@ -19,7 +21,7 @@ def call(Map config) {
                 steps {
                     sh "mvn ${config.mavencommand}"
                 }
-            }// stages closing
-        }//pipeline closing
-    } //def closing
+            }
+        }
+    }
 }
