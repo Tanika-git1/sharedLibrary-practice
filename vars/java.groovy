@@ -12,7 +12,6 @@ def call(Map config) {
             stage('Checkout') {
                 steps {
                     git branch: config.branch,
-                        credentialsId: config.cred,
                         url: config.repourl
                 }
             }
